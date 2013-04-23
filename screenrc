@@ -1,0 +1,6 @@
+hardstatus alwayslastline
+#  hardstatus string '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]'
+# Adds system load on the left and extra machine name on the right
+hardstatus string '%{= kG}[ %{G}%H %{g}][ %{B}%l %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][ %{B}%Y-%m-%d %{W}%c %{g}][ %{G}%H %{g}]'
+defscrollback 2000
+defshell /bin/bash

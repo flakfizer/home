@@ -1,0 +1,2 @@
+#!/usr/bin/bash
+python -c "import sys, simplejson as json; print json.dumps(json.load(sys.stdin, object_pairs_hook=json.OrderedDict), sort_keys=False, indent=4)"

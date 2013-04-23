@@ -1,0 +1,2 @@
+#!/bin/env bash
+vimdiff -c "normal ]czz" "$5" "$2"
