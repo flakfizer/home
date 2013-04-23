@@ -12,7 +12,6 @@ export HISTCONTROL=ignoredups
 
 # Aliases
 alias ll='ls -lh --color=tty'
-alias ls='ls --color=tty'
 alias gk='gitk --all'
 alias gl='git log --all --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --'
 alias gs='git status -sb'
@@ -20,6 +19,12 @@ alias gd='git diff'
 alias gc='git checkout'
 alias ga='git add'
 alias gcl='git clean'
+
+if uname | grep -q CYGWIN; then
+    alias ls='ls --color=tty'
+elif uname | grep -q Darwin; then
+    alias ls='ls -G'
+fi
 
 # Get around delete problems when using "screen"
 if [ $TERM = screen ]; then
