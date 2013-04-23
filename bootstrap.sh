@@ -1,7 +1,6 @@
 #! /usr/bin/env bash
 
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-# TARGET_DIR=~
 TARGET_DIR=~
 
 dotfiles=(bashrc inputrc screenrc vimrc vim ctags)
@@ -9,9 +8,13 @@ dotfiles=(bashrc inputrc screenrc vimrc vim ctags)
 for dotfile in ${dotfiles[@]}; do
     SRC=${SCRIPT_DIR}/${dotfile}
     TARGET=${TARGET_DIR}/.${dotfile}
-    ln -s $SRC $TARGET
-    if [ $? -eq 0 ]; then
-        echo "Created link $TARGET -> $SRC"
+    if [ -e $TARGET -o -d $TARGET ]; then
+        echo "Target exists: $(ls -l $TARGET)"
+    else
+        ln -s $SRC $TARGET
+        if [ $? -eq 0 ]; then
+            echo "Created link $TARGET -> $SRC"
+        fi
     fi
 done
 
@@ -24,9 +27,13 @@ fi
 for bin_file in $(ls bin); do
     SRC=${SCRIPT_BIN_DIR}/${bin_file}
     TARGET=${TARGET_BIN_DIR}/${bin_file}
-    ln -s $SRC $TARGET
-    if [ $? -eq 0 ]; then
-        echo "Created link $TARGET -> $SRC"
+    if [ -e $TARGET -o -d $TARGET ]; then
+        echo "Target exists: $(ls -l $TARGET)"
+    else
+        ln -s $SRC $TARGET
+        if [ $? -eq 0 ]; then
+            echo "Created link $TARGET -> $SRC"
+        fi
     fi
 done
 
