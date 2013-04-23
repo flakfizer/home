@@ -4,7 +4,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 # TARGET_DIR=~
 TARGET_DIR=~
 
-dotfiles=(bashrc inputrc screenrc vimrc vim)
+dotfiles=(bashrc inputrc screenrc vimrc vim ctags)
 
 for dotfile in ${dotfiles[@]}; do
     SRC=${SCRIPT_DIR}/${dotfile}

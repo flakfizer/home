@@ -1,0 +1,7 @@
+--c++-kinds=+p
+--python-kinds=-i
+--fields=+iaS
+--extra=+q
+--exclude=*.html
+--exclude=*.svn*
+--exclude=*externs*
