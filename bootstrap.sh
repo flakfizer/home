@@ -24,7 +24,7 @@ if [ ! -d ${TARGET_BIN_DIR} ]; then
     mkdir ${TARGET_BIN_DIR}
 fi
 
-for bin_file in $(ls bin); do
+for bin_file in $(ls ${SCRIPT_DIR}/bin); do
     SRC=${SCRIPT_BIN_DIR}/${bin_file}
     TARGET=${TARGET_BIN_DIR}/${bin_file}
     if [ -e $TARGET -o -d $TARGET ]; then
