@@ -117,7 +117,7 @@ set wildmode=list:longest
 
 autocmd BufNewFile,BufRead, *.1sc,*.bt set ft=c " 010 Editor scripts and templates
 autocmd BufNewFile,BufRead, *.i,*.gcov set ft=cpp
-autocmd BufNewFile,BufRead, *.json set ft=json
+autocmd BufNewFile,BufRead, *.json set ft=javascript
 autocmd BufNewFile,BufRead, *.pro,*.pri set expandtab ft=conf ts=4 sw=4
 autocmd BufNewFile,BufRead, *.proto set ft=proto
 autocmd BufNewFile,BufRead, *.ps1 set filetype=ps1 " powershell
