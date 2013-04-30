@@ -273,7 +273,7 @@ command! -nargs=0 RefreshTags :call RefreshTags()
 command! -nargs=? Tail :call UnixWatchTail(<f-args>)
 
 " Run an external command and capture its output in a scratch buffer
-command! -complete=shellcmd -nargs=+ Shell call s:ExecuteInShell(<q-args>, "<bang>")
+command! -complete=shellcmd -nargs=+ Shell call g:ExecuteInShell(<q-args>, "<bang>")
 
 
 " Run Python script
@@ -286,7 +286,7 @@ set cscopequickfix=s-,c-,d-,i-,t-,e-
 " set path+=/cygdrive/c/Program\ Files/Microsoft\ SDKs/Windows/v6.0A/Include
 " set path+=/cygdrive/c/Program\ Files\ (x86)/Microsoft\ Visual\ Studio\ 9.0/VC/include
 
-command! -complete=shellcmd -nargs=* -bang Shell call s:ExecuteInShell(<q-args>, '<bang>')
+command! -complete=shellcmd -nargs=* -bang Shell call g:ExecuteInShell(<q-args>, '<bang>')
 
 " }}}
 
@@ -680,7 +680,7 @@ function! UnixWatchTail(...) " {{{
     endtry
 endfunction " }}}
 
-function! s:ExecuteInShell(command, bang) " {{{
+function! g:ExecuteInShell(command, bang)" {{{
     " Runs a command in captures the output in a scratch buffer
     " From: https://svn.mageekbox.net/repositories/vim/trunk/.vimrc
     " Linked from VimTip: http://vim.wikia.com/wiki/Display_output_of_shell_commands_in_new_window
