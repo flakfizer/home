@@ -69,12 +69,12 @@ let g:solarized_termcolors=256 " }}}
 " }}}
 
 "==============================================================================
-" APPEARANCE
+" GENERAL
 "==============================================================================
 " {{{
 
 " color du jour
-colorscheme Mustang
+colorscheme jellybeans
 syntax on
 let mapleader = ','
 
@@ -137,14 +137,13 @@ autocmd BufNewFile,BufRead, *valgrind* set ft=valgrind
 autocmd Filetype c,cpp setlocal expandtab cindent ts=4 sw=4
 autocmd Filetype javascript setlocal expandtab cindent ts=4 sw=4
 autocmd Filetype mail setlocal wrap wrapmargin=75
-autocmd Filetype python setlocal expandtab tabstop=4 sts=4 shiftwidth=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class, makeprg=./%
+autocmd Filetype python setlocal expandtab tabstop=4 sts=4 shiftwidth=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 autocmd Filetype ruby setlocal expandtab tabstop=2 shiftwidth=2
 autocmd Filetype sh setlocal expandtab tabstop=4 shiftwidth=4
 autocmd Filetype txt setlocal wrap wrapmargin=75
 autocmd Filetype vim setlocal expandtab tabstop=4 shiftwidth=4 smartindent
 autocmd Filetype xml compiler xmllint
 autocmd Filetype xml setlocal errorformat+=%E%f:%l:\ %m
-autocmd Filetype xml setlocal makeprg=xmllint\ --noout\ --schema\ ~/pdls/PDD_CDD.xsd\ % errorformat=%f:%l:%m
 autocmd Filetype xml,html,xslt setlocal expandtab tabstop=2 shiftwidth=2
 autocmd Filetype xsd setlocal tabstop=1
 let g:xml_syntax_folding=1
