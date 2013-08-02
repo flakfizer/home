@@ -1,5 +1,7 @@
 set nocompatible
 filetype plugin on
+set modeline
+set modelines=5
 
 "==============================================================================
 " BUNDLES
@@ -34,14 +36,21 @@ let g:vimwiki_browsers=['firefox'] " }}}
 Bundle 'https://github.com/scrooloose/nerdtree.git'
 
 " Tool integration
-Bundle "ack.vim"
+Bundle 'ack.vim'
 Bundle 'fugitive.vim'
 Bundle 'git-commit'
 " {{{
 let g:git_diff_spawn_mode = 1 " horizontal split
-" let g:git_diff_spawn_mode = 2 " vertical split " }}}
+" let g:git_diff_spawn_mode = 2 " vertical split }}}
+Bundle 'Syntastic'
+" {{{
+let g:syntastic_mode_map = {"mode": "passive", "active_filetypes": [], "passive_filetypes": []}
+let g:syntastic_echo_current_error = 0
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_loc_list_height = 5 " }}}
 
-" Program language-specific
+" Programming language-specific
 Bundle 'OmniCppComplete'
 " {{{
 let OmniCpp_ShowPrototypeInAbbr=1 " }}}
@@ -720,4 +729,4 @@ if filereadable(expand("~/.vimrc.local"))
     source ~/.vimrc.local
 endif
 
-" vim: foldmethod=marker
+" vim: set foldmethod=marker :
