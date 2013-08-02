@@ -1,2 +1,2 @@
-#!/bin/env bash
+#!/usr/bin/env bash
 env GIT_EXTERNAL_DIFF=git_diff_wrapper git --no-pager diff $*
